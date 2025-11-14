@@ -1,0 +1,10 @@
+[
+  {
+    "question": "Explain research paper",
+    "answer": "<think> The paper \"MEM1: Learning to Synergize Memory and Reasoning for Efficient Long-Horizon Agents\" discusses the integration of memory and reasoning in agents to improve their performance on long-horizon tasks. It emphasizes the importance of structural learning and the potential trade-offs between producing syntactically valid responses and developing effective internal representations. </think><answer> The paper explores the synergy between memory and reasoning in agents for enhanced long-horizon task performance. </answer>"
+  },
+  {
+    "question": "What is reinforcement learning",
+    "answer": "Reinforcement learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent receives feedback in the form of rewards or penalties based on its actions, which helps it learn to maximize cumulative rewards over time. The core idea is to bootstrap from partial solutions and learn new tasks from scratch, guided by an informative reward function (from \"Reinforcement Learning Teachers of Test Time Scaling\"). In RL, agents explore their environment and improve their performance through trial and error, adjusting their strategies based on the outcomes of their actions."
+  }
+]
