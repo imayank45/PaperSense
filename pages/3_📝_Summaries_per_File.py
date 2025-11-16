@@ -5,14 +5,14 @@ from src.summaries import summarize_paper
 st.title("📝 Summaries Per File")
 
 docs = load_papers("data/research_papers")
+
+# Group pages by title
 papers = {}
-
 for d in docs:
-    # Safely get title from metadata
-    title = d.metadata.get("paper_title") or d.metadata.get("title") or "Unknown Paper"
-
+    title = d.metadata.get("paper_title")
     papers.setdefault(title, []).append(d)
-    
+
+# Create summarize buttons
 for title, pages in papers.items():
     if st.button(f"Summarize: {title}"):
         s = summarize_paper(pages, title)

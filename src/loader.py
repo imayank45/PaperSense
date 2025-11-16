@@ -1,13 +1,19 @@
-from langchain_community.document_loaders import DirectoryLoader, PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
+import os
 
-def load_papers(folder_path = "data/research_papers"):
-    
-    loader = DirectoryLoader(
-        path = folder_path,
-        glob = "*.pdf",
-        loader_cls = PyPDFLoader
-    )
-    
-    papers = loader.load()
-    
-    return papers
+def load_papers(dir_path):
+    docs = []
+
+    for file in os.listdir(dir_path):
+        if file.endswith(".pdf"):
+            path = os.path.join(dir_path, file)
+            loader = PyPDFLoader(path)
+            pages = loader.load()
+
+            # Inject metadata: paper title = filename
+            for p in pages:
+                p.metadata["paper_title"] = file
+
+            docs.extend(pages)
+
+    return docs
